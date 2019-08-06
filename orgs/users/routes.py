@@ -5,8 +5,6 @@ from orgs.models import User, Post
 from orgs.users.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
                                    RequestResetForm, ResetPasswordForm)
 from orgs.users.utils import save_picture, send_reset_email
-
-
 from flask import Blueprint
 
 users = Blueprint('users', __name__)
@@ -44,7 +42,7 @@ def login():
 @users.route("/logout")
 def logout():
         logout_user()
-        return redirect(url_for('main.home'))
+        return redirect(url_for('main.landingpage'))
 
 @users.route("/account", methods=['GET', 'POST'])
 @login_required

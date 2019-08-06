@@ -8,8 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
-    {%if title %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"> {%if title %}
     <title>Orgs - {{ title }}</title>
     {% else %}
     <title>Orgs</title>
@@ -34,13 +33,11 @@
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">New Event</a>
                         <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Profile</a>
-                        <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
-                        {% else %}
+                        <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a> {% else %}
                     </div>
                     <div class="navbar-nav direction:rtl">
                         <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>
-                        <a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a>
-                        {% endif %}
+                        <a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a> {% endif %}
                     </div>
                 </div>
             </div>
@@ -49,36 +46,15 @@
     <main role="main" class="container">
         <div class="row">
             <div class="col-md-8">
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
+                {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
                 {% for category, message in messages %}
                 <div class="alert alert-{{ category }}">
                     {{ message }}
                 </div>
-                {% endfor %}
-                {% endif %}
-                {% endwith %}
-                {% block content %}{% endblock %}
-            </div>
-            <div class="col-md-4">
-                {% if current_user.is_authenticated %}
-                <div class="content-section">
-                    <h3>Our Sidebar</h3>
-                    <p class='text-muted'>You can put any information here you'd like.
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">Latest Posts</li>
-                            <li class="list-group-item list-group-item-light">Announcements</li>
-                            <li class="list-group-item list-group-item-light">Calendars</li>
-                            <li class="list-group-item list-group-item-light">etc</li>
-                        </ul>
-                    </p>
-                    {% endif %}
-                </div>
+                {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
             </div>
         </div>
     </main>
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
