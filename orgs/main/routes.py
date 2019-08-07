@@ -6,8 +6,8 @@ from orgs.models import Post
 main = Blueprint('main', __name__)
 
 @main.route("/")
-def landingpage():
-        return render_template('landingpage.html', title='Welcome to Orgs')
+def landing_page():
+        return render_template('landing_page.html', title='Welcome to Orgs')
 
 @main.route("/home")
 @login_required
