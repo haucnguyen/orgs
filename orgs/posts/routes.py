@@ -13,7 +13,7 @@ posts = Blueprint('posts', __name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        post = Post(title=form.title.data, date=form.date.data, location=form.location.data, content=form.content.data, author=current_user)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!', 'success')
@@ -36,12 +36,16 @@ def update_post(post_id):
         if form.validate_on_submit():
                 post.title = form.title.data
                 post.content = form.content.data
+                post.date = form.date.data
+                post.location = form.location.data
                 db.session.commit()
                 flash('Your post has been updated!', 'success')
                 return redirect(url_for('posts.post', post_id=post.id))
         elif request.method == 'GET':
                 form.title.data = post.title
                 form.content.data = post.content
+                form.date.data = post.date
+                form.location.data = post.location
         return render_template('create_post.html', title='Update Event', form=form, legend='Update Event')
 
 
