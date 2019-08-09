@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"> {%if title %}
-    <title>Orgs - {{ title }}</title>
+    <title>ClubHub - {{ title }}</title>
     {% else %}
-    <title>Orgs</title>
+    <title>ClubHub</title>
     {% endif %}
 </head>
 
@@ -20,9 +20,9 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
                 {% if current_user.is_authenticated %}
-                <a class="navbar-brand mr-4" href="{{ url_for('main.home') }}">Orgs</a>
+                <a class="navbar-brand mr-4" href="{{ url_for('main.home') }}">ClubHub</a>
                 {% else %}
-                <a class="navbar-brand mr-4" href="/">Orgs</a>
+                <a class="navbar-brand mr-4" href="/">ClubHub</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                     aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -37,12 +37,12 @@
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">New Event</a>
                         <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Profile</a>
-                        <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a> 
+                        <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
                         {% else %}
                     </div>
                     <div class="navbar-nav direction:rtl">
                         <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>
-                        <a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a> 
+                        <a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a>
                         {% endif %}
                     </div>
                 </div>
@@ -50,21 +50,13 @@
         </nav>
     </header>
     <main role="main" class="container">
-        <div class="row">
-            <div class="col">
-                hellow poop
+        <div class="container">
+            {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
             </div>
-            <div class="col-8">
-                {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
-                {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                    {{ message }}
-                </div>
-                {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
-            </div>
-            <div class="col">
-                   hello world
-            </div>
+            {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
         </div>
 
     </main>

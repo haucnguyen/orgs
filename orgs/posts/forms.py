@@ -8,4 +8,4 @@ class PostForm(FlaskForm):
     date = DateField('Event date', default=date.today(), format='%m/%d/%Y', validators=[DataRequired(message="You need to enter the date.")])
     location = StringField('Location', validators=[DataRequired()])
     content = TextAreaField('Description', validators=[DataRequired()])
-    submit = SubmitField('Post')
+    submit = SubmitField('Create Event')

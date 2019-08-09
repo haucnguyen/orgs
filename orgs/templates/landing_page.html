@@ -1,13 +1,14 @@
-{% extends "layout.html" %} 
+{% extends "layout.html" %}
 {% block content %}
 <header class="site-header">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">a student organization database</div>
-                <div class="intro-heading text-uppercase">Welcome To Orgs!</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ url_for('users.register') }}">Tell Me More</a>
-            </div>
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in">a student organization database</div>
+            <div class="intro-heading text-uppercase">Welcome To ClubHub!</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
+                href="{{ url_for('users.register') }}">Tell Me More</a>
         </div>
-    </header>
+    </div>
+</header>
 
 {% endblock content %}
