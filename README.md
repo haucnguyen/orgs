@@ -7,7 +7,6 @@ Things that are completed:
 -User Profile
 -Creating, Updating, Deleting Events
 
-
 Things that I want to do:
 -Club Model
 -Categorizing Events
