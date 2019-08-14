@@ -11,4 +11,3 @@ Things that I want to do:
 -Club Model
 -Categorizing Events
 -Search Functionality
--
