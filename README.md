@@ -1,13 +1,20 @@
 # orgs
-This is a work in progress app!! 
+personal project code
 
-Things that are completed:
--User and Post Models
--Login & Registration System
--User Profile
+## Python version
+Python 3.7
+
+## Things I've Done
+```
+-User and Post Models 
+-Login & Registration System 
+-User Profile 
 -Creating, Updating, Deleting Events
+```
 
-Things that I want to do:
--Club Model
--Categorizing Events
+## Things I need to do before launch: by end of Aug!!
+```
+-Club Model 
+-Categorizing Events 
 -Search Functionality
+```
