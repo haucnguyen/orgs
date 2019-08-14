@@ -4,7 +4,7 @@ personal project code
 ## Python version
 Python 3.7
 
-## Things I've Done
+## Features that I've implemented
 ```
 -User and Post Models 
 -Login & Registration System 
@@ -12,9 +12,17 @@ Python 3.7
 -Creating, Updating, Deleting Events
 ```
 
-## Things I need to do before launch: by end of Aug!!
+## Features that I need to implement before launch: by end of Aug!!
 ```
 -Club Model 
 -Categorizing Events 
 -Search Functionality
+```
+
+## Backlog Features:
+```
+-Market Place
+-Follow System
+-Notifications
+-Detailed User Profile
 ```
