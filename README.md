@@ -17,6 +17,7 @@ Python 3.7
 -Club Model 
 -Categorizing Events 
 -Search Functionality
+-User Comments
 ```
 
 ## Backlog Features:
