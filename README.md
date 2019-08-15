@@ -12,7 +12,7 @@ Python 3.7
 -Creating, Updating, Deleting Events
 ```
 
-## Features that I need to implement before launch: by end of Aug!!
+## Features that I need to implement before launch
 ```
 -Club Model 
 -Categorizing Events 
